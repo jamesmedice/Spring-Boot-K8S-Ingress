@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: medici/gateway:1.0
+        image: medici/gateway
         ports:
         - containerPort: 8080
 ---

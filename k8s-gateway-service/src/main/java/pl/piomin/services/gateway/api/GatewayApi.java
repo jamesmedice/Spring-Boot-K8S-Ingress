@@ -15,6 +15,9 @@ import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 @Configuration
 public class GatewayApi {
 
+	private static final String _2_0_SWAGGER_VERSION_ = "2.0";
+	private static final String V2_API_DOCS = "/v2/api-docs";
+
 	@Autowired
 	ZuulProperties properties;
 
@@ -23,8 +26,7 @@ public class GatewayApi {
 	public SwaggerResourcesProvider swaggerResourcesProvider() {
 		return () -> {
 			List<SwaggerResource> resources = new ArrayList<>();
-			properties.getRoutes().values().stream()
-					.forEach(route -> resources.add(createResource(route.getId(), "2.0")));
+			properties.getRoutes().values().stream().forEach(route -> resources.add(createResource(route.getId(), _2_0_SWAGGER_VERSION_)));
 			return resources;
 		};
 	}
@@ -32,7 +34,7 @@ public class GatewayApi {
 	private SwaggerResource createResource(String location, String version) {
 		SwaggerResource swaggerResource = new SwaggerResource();
 		swaggerResource.setName(location);
-		swaggerResource.setLocation("/" + location + "/v2/api-docs");
+		swaggerResource.setLocation("/" + location + V2_API_DOCS);
 		swaggerResource.setSwaggerVersion(version);
 		return swaggerResource;
 	}

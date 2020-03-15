@@ -1,0 +1,15 @@
+apiVersion: skaffold/v1alpha5
+kind: Config
+build:
+  artifacts:
+  - image: medici/admin
+  - image: medici/employee
+  - image: medici/department
+  - image: medici/organization
+  - image: medici/gateway
+  tagPolicy:
+    gitCommit: {}
+deploy:
+  kubectl:
+    manifests:
+    - ./kubernetes/**.yaml

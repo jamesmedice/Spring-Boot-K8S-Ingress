@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: department
-        image: medici/department:1.0
+        image: medici/department
         ports:
         - containerPort: 8080
         env:

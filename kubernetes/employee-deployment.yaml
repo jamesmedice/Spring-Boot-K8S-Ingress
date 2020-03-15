@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: employee
-        image: medici/employee:1.0
+        image: medici/employee
         ports:
         - containerPort: 8080
         env:

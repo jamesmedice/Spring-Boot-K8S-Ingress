@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: organization
-        image: medici/organization:1.0
+        image: medici/organization
         ports:
         - containerPort: 8080
         env:
