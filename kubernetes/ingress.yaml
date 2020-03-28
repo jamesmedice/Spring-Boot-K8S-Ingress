@@ -9,8 +9,7 @@ spec:
     serviceName: default-http-backend
     servicePort: 80
   rules:
-  - host: microservices.info
-    http:
+  - http:
       paths:
       - path: /employee
         backend:
