@@ -23,6 +23,7 @@
 		<module>k8s-gateway-service</module>
 		<module>k8s-services-parent</module>
 		<module>k8s-boot-parent</module>
+		<module>k8s-environment-service</module>
 	</modules>
 
 	<build>

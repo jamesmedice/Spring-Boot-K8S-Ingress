@@ -3,13 +3,25 @@ kind: Config
 build:
   artifacts:
   - image: medici/admin
+    context: k8s-admin-service
   - image: medici/employee
+    context: k8s-employee-service
   - image: medici/department
+    context: k8s-department-service
   - image: medici/organization
+    context: k8s-organization-service
   - image: medici/gateway
+    context: k8s-gateway-service
+  - image: medici/environment
+    context: k8s-environment-service
   tagPolicy:
     gitCommit: {}
 deploy:
   kubectl:
     manifests:
     - ./kubernetes/**.yaml
+profiles:
+- name: james, dev
+  build:
+    local:
+      push: false

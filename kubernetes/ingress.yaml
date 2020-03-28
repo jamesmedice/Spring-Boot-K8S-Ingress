@@ -24,3 +24,7 @@ spec:
         backend:
           serviceName: organization
           servicePort: 8080
+      - path: /environment
+        backend:
+          serviceName: environment
+          servicePort: 8080

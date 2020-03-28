@@ -1,0 +1,10 @@
+apiVersion: skaffold/v2alpha1
+kind: Config
+metadata:
+  name: environment-service
+build:
+  artifacts:
+    - image: medici/environment
+      jib: {}
+  tagPolicy:
+    gitCommit: {}
