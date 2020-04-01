@@ -2,13 +2,14 @@ server:
   port: 8080
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: gateway
 
-
-logging:
-  pattern: 
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+ribbon: 
+  eureka: 
+    enabled: false
 
 
 zuul:
@@ -21,3 +22,8 @@ zuul:
       path: /organization/**
     environment:
       path: /environment/**
+
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
