@@ -6,6 +6,12 @@ spring:
     allow-bean-definition-overriding: true
   application:
     name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
 
 ribbon: 
   eureka: 
@@ -14,19 +20,34 @@ ribbon:
 
 zuul:
   routes:
-    department:
-      serviceId: department
-      #path: /department/**
-    employee:
-      serviceId: employee
-      #path: /employee/**
-    organization:
-      serviceId: organization
-      #path: /organization/**
-    environment:
-      serviceId: environment
-      #path: /environment/**
+    department-proxy:
+      serviceId: department-service
+      path: /department/**
+    employee-proxy:
+      serviceId: employee-service
+      path: /employee/**
+    environment-proxy:
+      serviceId: environment-service
+      path: /environment/**
+    organization-proxy:
+      serviceId: organization-service
+      path: /organization/**
 
+department-proxy:   
+  ribbon:
+    listOfServers: department
+
+employee-proxy:   
+  ribbon:
+    listOfServers: employee
+
+environment-proxy:   
+  ribbon:
+    listOfServers: environment
+
+organization-proxy:   
+  ribbon:
+    listOfServers: organization
 
 logging:
   pattern: 

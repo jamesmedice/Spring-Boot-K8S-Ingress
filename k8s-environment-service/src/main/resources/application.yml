@@ -1,9 +1,11 @@
 server:
   port: 8080
+  servlet:
+    contextPath: /environment
 
 spring:
   application:
-    name: environment
+    name: environment-service
 
 logging:
   pattern: 

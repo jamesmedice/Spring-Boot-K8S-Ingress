@@ -1,6 +1,5 @@
 package com.medici.services.environment.reources;
 
-import java.util.Map;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +20,6 @@ public class EnvironmentResource {
 
 	@Autowired
 	Environment environment;
-
-	@RequestMapping(value = "/environment/", method = RequestMethod.GET)
-	public Map<String, String> environment() {
-		logger.info("microservice envVars() invoked");
-		return System.getenv();
-	}
 
 	@RequestMapping(value = "/activeProfiles/", method = RequestMethod.GET)
 	public String[] activeProfiles() {

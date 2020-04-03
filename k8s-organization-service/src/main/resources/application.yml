@@ -1,11 +1,13 @@
 server:
   port: 8080
+  servlet:
+    contextPath: /organization
 
 spring:
   main:
     allow-bean-definition-overriding: true
   application:
-    name: organization
+    name: organization-service
   data:
     mongodb:
       uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb.default/${MONGO_DATABASE}
