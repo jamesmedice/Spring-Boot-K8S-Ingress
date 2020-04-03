@@ -4,6 +4,8 @@ build:
   artifacts:
   - image: medici/admin
     context: k8s-admin-service
+  - image: medici/admin-client
+    context: k8s-admin-client-service
   - image: medici/employee
     context: k8s-employee-service
   - image: medici/department

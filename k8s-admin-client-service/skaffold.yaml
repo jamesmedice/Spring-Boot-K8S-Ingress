@@ -1,0 +1,10 @@
+apiVersion: skaffold/v2alpha1
+kind: Config
+metadata:
+  name: admin-client-service
+build:
+  artifacts:
+    - image: medici/admin-client
+      jib: {}
+  tagPolicy:
+    gitCommit: {}

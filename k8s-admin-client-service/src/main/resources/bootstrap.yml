@@ -1,14 +1,13 @@
 server:
   port: 8080
 
-
 spring:
   security:
     user:
       name: admin
       password: admin
   applicaton:
-    name: admin
+    name: admin-client
   boot: 
     admin:
       client:
@@ -20,12 +19,6 @@ spring:
             user:
               name: ${spring.security.user.name}
               password: ${spring.security.user.password}
-  cloud:
-    kubernetes:
-      discovery:
-        all-namespaces: true
-        service-labels:
-          spring-boot: true
 
 
 management:

@@ -24,12 +24,12 @@ metadata:
 data:
   application.yml: |-
     spring:
-     cloud:
-      kubernetes:
-        discovery:
-          all-namespaces: true
-          service-labels:
-            spring-boot: true
+      cloud:
+        kubernetes:
+          discovery:
+            all-namespaces: true
+            service-labels:
+              spring-boot: true
 ---
 apiVersion: v1
 kind: Service
