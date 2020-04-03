@@ -1,10 +1,10 @@
 apiVersion: skaffold/v2alpha1
 kind: Config
 metadata:
-  name: environment-service
+  name: manager-service
 build:
   artifacts:
-    - image: medici/environment
+    - image: medici/manager
       jib: {}
   tagPolicy:
     gitCommit: {}

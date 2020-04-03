@@ -12,8 +12,8 @@ build:
     context: k8s-organization-service
   - image: medici/gateway
     context: k8s-gateway-service
-  - image: medici/environment
-    context: k8s-environment-service
+  - image: medici/manager
+    context: k8s-manager-service
   tagPolicy:
     gitCommit: {}
 deploy:
