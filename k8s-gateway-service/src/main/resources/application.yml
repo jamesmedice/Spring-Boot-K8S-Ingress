@@ -20,34 +20,15 @@ ribbon:
 
 zuul:
   routes:
-    department-proxy:
-      serviceId: department-service
-      path: /department/**
-    employee-proxy:
-      serviceId: employee-service
-      path: /employee/**
-    environment-proxy:
-      serviceId: environment-service
-      path: /environment/**
-    organization-proxy:
-      serviceId: organization-service
-      path: /organization/**
+    department-service:
+      url: http://department:8080
+    employee-service:
+      url: http://employee:8080
+    environment-service:
+      url: http://environment:8080
+    organization-service:
+      url: http://organization:8080
 
-department-proxy:   
-  ribbon:
-    listOfServers: department
-
-employee-proxy:   
-  ribbon:
-    listOfServers: employee
-
-environment-proxy:   
-  ribbon:
-    listOfServers: environment
-
-organization-proxy:   
-  ribbon:
-    listOfServers: organization
 
 logging:
   pattern: 

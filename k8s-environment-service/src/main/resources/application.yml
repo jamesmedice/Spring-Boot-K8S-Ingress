@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: environment-service
+    name: environment
 
 logging:
   pattern: 
