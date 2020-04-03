@@ -9,16 +9,31 @@
 
 	<parent>
 		<groupId>com.medici.services</groupId>
-		<artifactId>k8s-services-parent</artifactId>
+		<artifactId>k8s-boot-parent</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../k8s-services-parent</relativePath>
+		<relativePath>../k8s-boot-parent</relativePath>
 	</parent>
 
-
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger292.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger292.version}</version>
+		</dependency>
+	</dependencies>
 
 
 	<build>
