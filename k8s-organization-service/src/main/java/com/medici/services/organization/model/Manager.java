@@ -1,7 +1,4 @@
-package com.medici.services.employee.model;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.medici.services.organization.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,13 +15,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Document(collection = "employee")
-public class Employee {
+public class Manager {
 
-	@Id
 	private String id;
-	private Long organizationId;
-	private Long departmentId;
 	private String name;
 	private int age;
 	private String position;

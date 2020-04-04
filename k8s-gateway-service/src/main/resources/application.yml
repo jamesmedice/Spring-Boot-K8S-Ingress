@@ -28,6 +28,8 @@ zuul:
       url: http://manager:8080
     organization-service:
       url: http://organization:8080
+    ambassador-service:
+      url: http://ambassador:8080
 
 
 logging:

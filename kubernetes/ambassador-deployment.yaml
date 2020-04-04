@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ambassador
+  labels:
+    app: ambassador
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ambassador
+  template:
+    metadata:
+      labels:
+        app: ambassador
+    spec:
+      containers:
+      - name: ambassador
+        image: medici/ambassador
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MONGO_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: mongodb
+              key: database-name
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb
+              key: database-user
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb
+              key: database-password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ambassador
+  labels:
+    app: ambassador
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: ambassador

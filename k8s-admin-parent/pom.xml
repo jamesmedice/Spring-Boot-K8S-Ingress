@@ -3,13 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>k8s-admin-service</artifactId>
+	<artifactId>k8s-admin-parent</artifactId>
+	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>com.medici.services</groupId>
-		<artifactId>k8s-admin-parent</artifactId>
+		<artifactId>k8s-boot-parent</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../k8s-admin-parent</relativePath>
+		<relativePath>../k8s-boot-parent</relativePath>
 	</parent>
 
 	<properties>
@@ -19,18 +20,22 @@
 	<dependencies>
 		<dependency>
 			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-server</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-server-ui-login</artifactId>
-			<version>${spring-boot-admin-server-ui-login.version}</version>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-kubernetes-all</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -66,4 +71,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

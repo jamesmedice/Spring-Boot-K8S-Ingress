@@ -1,4 +1,4 @@
-package com.medici.services.employee.model;
+package com.medici.services.ambassador.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,14 +19,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Document(collection = "employee")
-public class Employee {
+@Document(collection = "ambassador")
+public class Ambassador {
 
 	@Id
 	private String id;
 	private Long organizationId;
-	private Long departmentId;
 	private String name;
-	private int age;
-	private String position;
+	private int experience;
+	private String functionArea;
 }

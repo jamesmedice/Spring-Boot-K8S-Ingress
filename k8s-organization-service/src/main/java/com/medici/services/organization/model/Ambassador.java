@@ -1,4 +1,4 @@
-package com.medici.services.department.model;
+package com.medici.services.organization.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,10 +15,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Employee {
+public class Ambassador {
 
-	private Long id;
+	private String id;
 	private String name;
-	private int age;
-	private String position;
+	private int experience;
+	private String functionArea;
 }

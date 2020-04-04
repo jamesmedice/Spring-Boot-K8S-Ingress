@@ -6,6 +6,8 @@ build:
     context: k8s-admin-service
   - image: medici/admin-client
     context: k8s-admin-client-service
+  - image: medici/ambassador
+    context: k8s-ambassador-service
   - image: medici/employee
     context: k8s-employee-service
   - image: medici/department
@@ -21,9 +23,20 @@ build:
 deploy:
   kubectl:
     manifests:
-    - ./kubernetes/**.yaml
+    - ./kubernetes/mongodb-secret.yaml
+    - ./kubernetes/mongodb-deployment.yaml
+    - ./kubernetes/mongodb-configmap.yaml
+    - ./kubernetes/admin-deployment.yaml
+    - ./kubernetes/admin-client-deployment.yaml
+    - ./kubernetes/ambassador-deployment.yaml
+    - ./kubernetes/department-deployment.yaml
+    - ./kubernetes/employee-deployment.yaml
+    - ./kubernetes/manager-deployment.yaml
+    - ./kubernetes/organization-deployment.yaml
+    - ./kubernetes/gateway-deployment.yaml
+    - ./kubernetes/ingress.yaml
 profiles:
-- name: james, dev
+- name: james, dev, kubernetes, mongo
   build:
     local:
       push: false

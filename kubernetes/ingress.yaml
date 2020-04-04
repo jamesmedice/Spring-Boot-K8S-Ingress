@@ -27,3 +27,7 @@ spec:
         backend:
           serviceName: manager
           servicePort: 8080
+      - path: /ambassador
+        backend:
+          serviceName: ambassador
+          servicePort: 8080
